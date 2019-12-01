@@ -90,4 +90,19 @@ public class TakeAwayManagerTest{
 
         testBill.getOrderPrice(itemsOrdered);
     } 
+
+    @Test
+    public void TotalPriceLessThan10Euros_Test() throws TakeAwayBillException {
+        List<MenuItem> itemsOrdered = new ArrayList<MenuItem>();
+        TakeAwayManager testBill = new TakeAwayManager();
+
+        itemsOrdered.add(new MenuItem("Olive ascolane" , MenuItem.items.Fritto, 3.00));
+
+        try {
+            assertEquals(3.5, testBill.getOrderPrice(itemsOrdered), 0.0);
+        } 
+        catch (TakeAwayBillException exc){
+            exc.getMessage();
+        }
+    } 
 }
