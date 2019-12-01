@@ -23,7 +23,7 @@ public class TakeAwayManagerTest{
         itemsOrdered.add(new MenuItem("Patatine fritte", MenuItem.items.Fritto, 2.50));
 
         try{
-            assertEquals(8.00, testBill.getOrderPrice(itemsOrdered), 0.0);
+            assertEquals(8.5, testBill.getOrderPrice(itemsOrdered), 0.0);
         } 
         catch (TakeAwayBillException exc){
             exc.getMessage();
